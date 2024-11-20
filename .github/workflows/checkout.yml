@@ -15,3 +15,5 @@ jobs:
           git checkout main
       - name: List files after
         run: ls -a
+      - name: Echo vars
+        run: echo "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
