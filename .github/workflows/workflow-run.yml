@@ -1,0 +1,11 @@
+name: Workflow run WF
+on:
+  workflow_run: 
+    workflows: [Events WF]
+    types: [completed]
+
+jobs:
+  echo-string:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I was triggered because 'Events WF' was completed"
