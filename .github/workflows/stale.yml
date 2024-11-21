@@ -1,0 +1,15 @@
+name: Stale issues & PR WF
+
+on: 
+  schedule:
+    - cron: 0 14 * * *
+    - cron: 0/5 * * * * # minimum every 5 minutes
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message: 'This issue is stale because it has been open 1 day with no activity. Remove stale label or comment or this will be closed in 5 days.'
+          days-before-stale: 1
+          days-before-close: 5
