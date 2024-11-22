@@ -1,0 +1,11 @@
+name: Environment Variables WF
+on: [push]
+
+jobs:
+  env-vars-and-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log Env var
+        run: echo $GITHIB_REF # evaluated and lives in the runner machine
+      - name: Log Context
+        run: echo '${{ github.ref }}' # isn't evaluated in the runner machine, it's sent already evaluated
