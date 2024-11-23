@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Step 1
-        run: sleep 10 # wait for 20 secs
+        run: sleep 70 # wait for 10 secs
+        timeout-minutes: 1
       - name: Fail
         id: step-2
         continue-on-error: true
